@@ -7,7 +7,12 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Services from './pages/Services';
 
+import bioList from './assets/descriptions/bioList';
+
 function App() {
+    //BIO page
+    const { bio } = bioList;
+
     return (
         <Router>
             <Header />
@@ -15,7 +20,7 @@ function App() {
                 <Route path="/vytautas-portfolio" element={<Home />} />
                 <Route path="/audio" element={<Audio />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/bio" element={<Bio />} />
+                <Route path="/bio" element={<Bio bio={bio} />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
         </Router>
