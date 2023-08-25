@@ -1,7 +1,15 @@
 .section-contacts {
-    // background-color: $color-grey-light-2;
     height: 90vh;
     @include respond(tab-port) {
         text-align: center;
     }
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip-path: inset(50%);
 }
