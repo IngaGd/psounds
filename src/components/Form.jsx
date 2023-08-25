@@ -16,7 +16,7 @@ export default function Form() {
         formData.append('filename', file);
 
         try {
-            const response = await fetch('http://localhost:3003/submit-form', {
+            const response = await fetch('http://wdp.lt:8080/submit-form', {
                 method: 'POST',
                 body: formData,
             });
