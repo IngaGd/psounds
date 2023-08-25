@@ -12,7 +12,7 @@ const productionHighlightList = {
         {
             id: uuidv4(),
             title: 'Austeja - Beyond HH',
-            track: URL + '2._Austeja_ - _Beyond_HH.mp3'
+            track: URL + '2._Austeja_-_Beyond_HH.mp3'
         },
         {
             id: uuidv4(),
