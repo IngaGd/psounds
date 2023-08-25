@@ -1,0 +1,31 @@
+.section-image {
+}
+
+.image-box-header {
+    .image {
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+        @include respond(tab-port) {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.image-box-full-screen {
+    .image {
+        // height: 100vh;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+
+        @include respond(tab-port) {
+            width: 100%;
+            height: auto;
+        }
+        @include respond(phone-sm) {
+            padding-top: 0;
+        }
+    }
+}

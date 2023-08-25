@@ -1,0 +1,33 @@
+.btn-paypal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .image {
+        width: 10rem;
+    }
+}
+
+.btn-icons {
+    border: none;
+    font-size: 5rem;
+    color: $color-grey-dark;
+    background-color: transparent;
+    &.times {
+        margin-right: 4rem;
+    }
+}
+
+.btn-player {
+    border: none;
+    font-size: 1.6rem;
+    color: $color-grey-dark;
+    background-color: transparent;
+    cursor: pointer;
+    &.mute,
+    &.volume {
+        margin-left: 0.5rem;
+    }
+    @include respond(tab-port) {
+        font-size: 2.5rem;
+    }
+}

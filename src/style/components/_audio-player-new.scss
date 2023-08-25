@@ -1,0 +1,107 @@
+.player-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    color: $color-grey-dark;
+    .player-toolbar {
+        display: flex;
+        padding-bottom: 2rem;
+        align-items: center;
+        span {
+            font-weight: 400;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            font-family: sans-serif;
+            font-size: 1.4rem;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ccc;
+            -webkit-appearance: none;
+            height: 2px;
+            cursor: pointer;
+            input {
+                height: 2px;
+            }
+
+            // For Chrome and Safari
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 1rem;
+                height: 1rem;
+                background-color: $color-grey-dark;
+                cursor: pointer;
+                border-radius: 50%;
+                margin-top: -0.5rem;
+                @include respond(tab-port) {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-top: -0.75rem;
+                }
+            }
+
+            // For Firefox
+            &::-moz-range-thumb {
+                width: 1rem;
+                height: 1rem;
+                background-color: $color-grey-dark;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+
+            // For Chrome and Safari
+            &::-webkit-slider-runnable-track {
+                background-color: #ccc;
+                height: 2px;
+            }
+
+            // For Firefox
+            &::-moz-range-track {
+                background-color: #ccc;
+                height: 2px;
+            }
+        }
+        .volume-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .volume-slider {
+                position: absolute;
+                opacity: 0;
+                left: -0.5rem;
+                top: -1.3rem;
+                transition: opacity 0.3s;
+                pointer-events: none;
+                transition: all 0.5s;
+                @include respond(tab-port) {
+                    display: none;
+                }
+                // For Chrome and Safari
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    width: 1rem;
+                    height: 1rem;
+                    background-color: $color-grey-dark;
+                    // border: 1px solid red;
+                    cursor: pointer;
+                    border-radius: 50%;
+                }
+
+                input {
+                    width: 5rem;
+                    -webkit-appearance: none;
+                    background-color: #ccc;
+                    height: 2px;
+                    cursor: pointer;
+                    transform: rotate(-90deg);
+                }
+            }
+
+            &:hover .volume-slider {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+}

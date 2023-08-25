@@ -1,0 +1,37 @@
+.form-box {
+    width: 100%;
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        .cell-1 {
+            margin-bottom: 2rem;
+            input,
+            textarea {
+                width: 100%;
+                padding: 0.5rem 1rem;
+                background-color: $color-grey-light-2;
+                border: 0.1rem solid $color-grey-dark;
+                border-radius: 0.2rem;
+            }
+            input,
+            textarea:focus {
+                outline: none;
+            }
+        }
+        .submit-btn {
+            width: 10rem;
+            padding: 0.5rem 1rem;
+            background-color: $color-logo-green;
+            color: white;
+            // border: 0.1rem solid $color-logo-green;
+            border: none;
+            border-radius: 0.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: $color-coral;
+            color: $color-white;
+        }
+    }
+}

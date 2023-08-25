@@ -1,0 +1,73 @@
+.section-playlists {
+    // background-color: $color-grey-light-2;
+    @include respond(phone) {
+        display: flex;
+        flex-direction: row;
+    }
+    .image-box {
+        display: flex;
+        justify-content: flex-end;
+        @include respond(phone) {
+            justify-content: center;
+        }
+        &__image {
+            height: 60rem;
+            border-radius: 3px;
+            @include respond(phone) {
+                height: 40rem;
+            }
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    .heading-secondary.mob {
+        display: none;
+        @include respond(phone-sm) {
+            display: block;
+            padding-bottom: 2rem;
+        }
+    }
+    @include respond(phone-sm) {
+        flex-direction: column-reverse;
+    }
+}
+
+.row.flex {
+    .mob {
+        @include respond(phone-sm) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.playlists-description {
+    padding-top: 10rem;
+
+    @include respond(phone) {
+        padding-top: 1rem;
+    }
+    .heading-secondary {
+        @include respond(phone-sm) {
+            display: none;
+        }
+    }
+    .paragraph {
+        padding-bottom: 6rem;
+        text-align: justify;
+        @include respond(tab-port) {
+            padding-right: 1.5rem;
+            padding-bottom: 1rem;
+        }
+        @include respond(phone-sm) {
+            padding-top: 2rem;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.row.bottom-border {
+    width: 100%;
+}
