@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 
 import bioList from './assets/descriptions/bioList';
+import cv from './assets/descriptions/cv';
+import servicesList from './assets/descriptions/servicesList';
 
 import collabsAlbumList from './assets/audio/collabsAlbumList';
 import productionHighlightList from './assets/audio/productionHighlightList';
@@ -19,10 +21,13 @@ import tvBrandsComertialsList from './assets/audio/tvBrandsComertialsList';
 import soundtracksList from './assets/audio/soundtracksList';
 
 function App() {
+    // HOME page
+    const { cvSections } = cv;
+
     //BIO page
     const { bio } = bioList;
 
-    // AUDIO
+    // AUDIO page
     const { collabs } = collabsAlbumList;
     const { productionHighlight } = productionHighlightList;
     const { earlyProduction } = earlyProductionList;
@@ -32,11 +37,22 @@ function App() {
     const { tvBrandsComertials } = tvBrandsComertialsList;
     const { soundtracks } = soundtracksList;
 
+    // SEVICES
+    const { services } = servicesList;
+
     return (
         <Router>
             <Header />
             <Routes>
-                <Route path="/vytautas-portfolio" element={<Home />} />
+                <Route
+                    path="/vytautas-portfolio"
+                    element={
+                        <Home
+                            cvSections={cvSections}
+                            productionHighlight={productionHighlight}
+                        />
+                    }
+                />
                 <Route
                     path="/audio"
                     element={
@@ -52,7 +68,10 @@ function App() {
                         />
                     }
                 />
-                <Route path="/services" element={<Services />} />
+                <Route
+                    path="/services"
+                    element={<Services services={services} />}
+                />
                 <Route path="/bio" element={<Bio bio={bio} />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
