@@ -27,7 +27,7 @@ export default function Header() {
             }`}
         >
             <div className="logo-box">
-                <Link to="/vytautas-portfolio">
+                <Link to="/">
                     <img className="logo" src={logo} alt="Logo" />
                 </Link>
             </div>

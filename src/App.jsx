@@ -45,7 +45,7 @@ function App() {
             <Header />
             <Routes>
                 <Route
-                    path="/vytautas-portfolio"
+                    path="/"
                     element={
                         <Home
                             cvSections={cvSections}
