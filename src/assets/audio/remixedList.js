@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-const URL = 'http://localhost:3003/audio/remixes/';
+const URL = 'http://wdp.lt:8080/audio/remixes/';
 
 const remixedList = {
     remixed: [
