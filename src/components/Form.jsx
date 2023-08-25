@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+//const URL = 'http://localhost:3003/submit-form';
+
 export default function Form() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -36,7 +38,7 @@ export default function Form() {
 
     return (
         <div className="form-box">
-            <form onSubmit={handleSubmit} enctype="multipart/form-data">
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="cell-1">
                     <input
                         id="email"
