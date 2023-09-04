@@ -26,7 +26,6 @@ export const AudioPlayer = ({
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(50);
-    // const [showVolumeSlider, setShowVolumeSlider] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
 
     const formatTime = (time) => {
@@ -34,11 +33,6 @@ export const AudioPlayer = ({
         const seconds = Math.floor(time % 60);
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
-
-    // const handleTimeUpdate = () => {
-    //     setCurrentTime(audioRef.current.currentTime);
-    //     setDuration(audioRef.current.duration);
-    // };
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -58,14 +52,6 @@ export const AudioPlayer = ({
         audioRef.current.muted = !audioRef.current.muted;
         setIsMuted(!isMuted);
     };
-
-    // const handleVolumeClick = () => {
-    //     setShowVolumeSlider(!showVolumeSlider);
-    // };
-
-    // const handleVolumeLeave = () => {
-    //     setShowVolumeSlider(false);
-    // };
 
     const handleVolumeChange = (e) => {
         setVolume(e.target.value);
@@ -98,10 +84,7 @@ export const AudioPlayer = ({
                     step="1"
                     onChange={handleTimeChange}
                 />
-                <div
-                    className="volume-container"
-                    // onMouseLeave={handleVolumeLeave}
-                >
+                <div className="volume-container">
                     <button
                         className="btn-player mute"
                         onClick={handleMuteClick}

@@ -19,6 +19,14 @@
     transform: translate(-50%, -50%);
 }
 
+@mixin thumb-style {
+    width: 1rem;
+    height: 1rem;
+    background-color: $color-grey-dark;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 //MEDIA QUERY MANAGER
 /*
 0 - 600px:    Phone 

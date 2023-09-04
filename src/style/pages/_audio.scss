@@ -1,5 +1,4 @@
 .section-playlists {
-    // background-color: $color-grey-light-2;
     @include respond(phone) {
         display: flex;
         flex-direction: row;

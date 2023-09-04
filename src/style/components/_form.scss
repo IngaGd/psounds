@@ -21,17 +21,16 @@
         .submit-btn {
             width: 10rem;
             padding: 0.5rem 1rem;
-            background-color: $color-logo-green;
+            background-color: $color-grey-dark;
             color: white;
-            // border: 0.1rem solid $color-logo-green;
-            border: none;
+            border: 1px solid $color-grey-dark;
             border-radius: 0.2rem;
             cursor: pointer;
             transition: all 0.3s;
         }
         .submit-btn:hover {
-            background-color: $color-coral;
-            color: $color-white;
+            background-color: $color-grey-light-2;
+            color: $color-grey-dark;
         }
     }
 }

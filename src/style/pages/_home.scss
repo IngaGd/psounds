@@ -1,10 +1,3 @@
-.section-hero {
-}
-
-.section-about {
-    // background-color: $color-grey-light-1;
-}
-
 .link {
     color: $color-grey-dark;
 }
@@ -14,31 +7,3 @@
     border-radius: 2px;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
 }
-
-.section-audio {
-    // background-color: $color-grey-light-2;
-}
-
-// .section-contacts {
-//     background-color: $color-grey-light-1;
-//     &__photo {
-//         border-radius: 2px;
-//         width: 100%;
-//     }
-//     &__right {
-//         position: relative;
-//         &__text-container {
-//             position: absolute;
-//             // background-color: yellow;
-//             // top: 25%;
-//             // left: 25%;
-//             padding: 10rem;
-//             box-shadow: 0 1rem 2rem rgba($color-black, 0.5);
-//             border-radius: 3px;
-//             transform: translate(
-//                 15%,
-//                 15%
-//             ); /*move box to center, it is in relation to elemen it self*/
-//         }
-//     }
-// }

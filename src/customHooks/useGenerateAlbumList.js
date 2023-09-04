@@ -1,9 +1,6 @@
-// import React, { useRef, useState } from 'react';
 import { AudioPlayer } from '../components/AudioPlayer';
 
 export default function useGenerateAlbumList(albumList, playingAudio, playingTrackId, setPlayingTrackId) {
-    // const playingAudio = useRef(null);
-    // const [playingTrackId, setPlayingTrackId] = useState(null);
 
     const pauseOthers = (audio, trackId) => {
         if (playingAudio.current && playingAudio.current !== audio) {

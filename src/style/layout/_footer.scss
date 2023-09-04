@@ -1,6 +1,4 @@
 .section-footer {
-    // background-color: $color-grey-light-2;
-    // height: 30vh;
     .row {
         display: flex;
         flex-direction: column;
@@ -10,10 +8,12 @@
         h2 {
             margin-bottom: 2rem;
         }
-        // .contacts-box {
-        //     &__contacts {
-        //         margin-right: 2rem;
-        //     }
-        // }
+        .contacts {
+            font-size: $default-font-size;
+            color: $color-grey-dark;
+            text-decoration: none;
+            font-style: normal;
+            line-height: 2;
+        }
     }
 }

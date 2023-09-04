@@ -1,4 +1,3 @@
-@import './style/abstracts/functions';
 @import './style/abstracts/mixins';
 @import './style/abstracts/variables';
 
@@ -7,11 +6,10 @@
 @import './style/base/typography';
 @import './style/base/utitilities';
 
-// @import './style/components/audio-player.scss';
-@import './style/components/audio-player-new';
+@import './style/components/audio-player';
 @import './style/components/button';
 @import './style/components/form.scss';
-@import './style/components/footer';
+@import './style/components/logo-box';
 @import './style/components/popup';
 @import './style/components/section-image';
 
@@ -25,4 +23,3 @@
 @import './style/pages/contribute';
 @import './style/pages/home';
 @import './style/pages/servives';
-@import './style/pages/studio';

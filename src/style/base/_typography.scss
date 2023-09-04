@@ -43,32 +43,4 @@
 
 .paragraph {
     font-size: $default-font-size;
-    // text-align: justify;
-}
-
-.contacts-box {
-    &__contacts {
-        font-size: $default-font-size;
-        color: $color-grey-dark;
-        text-decoration: none;
-        font-style: normal;
-        line-height: 2;
-    }
-}
-
-.logo-box {
-    padding-left: calc(((100% - #{$grid-width}) / 2) / 4);
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    .logo {
-        height: 8rem;
-        width: auto;
-        @include respond(tab-port) {
-            padding-left: 2.5rem;
-            height: 8rem;
-        }
-        @include respond(tab-land) {
-            height: 8rem;
-        }
-    }
 }

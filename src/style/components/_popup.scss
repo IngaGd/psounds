@@ -24,13 +24,6 @@
         align-items: center;
         height: 10rem;
         justify-content: space-between;
-        // .times-icon {
-        //     padding-right: 4rem;
-        //     .fa-times {
-        //         font-size: 4rem;
-        //         color: $color-grey-dark;
-        //     }
-        // }
     }
     &__nav-links {
         @include absolute-center;

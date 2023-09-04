@@ -24,14 +24,6 @@
                 align-items: center;
                 justify-content: center;
             }
-            @include respond(phone) {
-                // padding-left: 8rem;
-                // padding-right: 8rem;
-            }
-            @include respond(phone-sm) {
-                // padding-left: 6rem;
-                // padding-right: 6rem;
-            }
         }
     }
 
@@ -43,13 +35,11 @@
     }
 
     @include respond(tab-land) {
-        // max-width: 50rem;
         padding-left: 6rem;
         padding-right: 6rem;
     }
 
     @include respond(tab-port) {
-        // max-width: 50rem;
         padding-left: 4rem;
         padding-right: 4rem;
     }
