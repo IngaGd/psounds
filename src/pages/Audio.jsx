@@ -1,8 +1,12 @@
 import React, { useRef, useState } from 'react';
 import useGenerateAlbumList from '../customHooks/useGenerateAlbumList';
 
-import image1 from '../assets/images/images/AUDIO/1.JPG';
-import image2 from '../assets/images/images/AUDIO/2.JPG';
+import imageLarge1 from '../assets/images/images/AUDIO/1-large.jpg';
+import imageMedium1 from '../assets/images/images/AUDIO/1-medium.jpg';
+import imageSmall1 from '../assets/images/images/AUDIO/1-small.jpg';
+import imageLarge2 from '../assets/images/images/AUDIO/2-large.jpg';
+import imageMedium2 from '../assets/images/images/AUDIO/2-medium.jpg';
+import imageSmall2 from '../assets/images/images/AUDIO/2-small.jpg';
 import useScrollToTop from '../customHooks/useScrollToTop';
 
 export default function Audio({
@@ -45,18 +49,50 @@ export default function Audio({
                             Music library
                         </h2>
                         <div className="image-box">
-                            <img
-                                src={image1}
-                                alt="portfolio"
-                                className="image-box__image"
-                            />
+                            <picture>
+                                <source
+                                    media="(max-width: 600px)"
+                                    srcSet={imageSmall1}
+                                />
+                                <source
+                                    media="(max-width: 900px)"
+                                    srcSet={imageMedium1}
+                                />
+                                <source
+                                    media="(min-width: 901px)"
+                                    srcSet={imageLarge1}
+                                />
+                                <img
+                                    src={imageMedium1}
+                                    alt="profile"
+                                    className="image-box__image"
+                                />
+                            </picture>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="section-image">
                 <div className="image-box-full-screen">
-                    <img src={image2} alt="" className="image" />
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcSet={imageSmall2}
+                        />
+                        <source
+                            media="(max-width: 900px)"
+                            srcSet={imageMedium2}
+                        />
+                        <source
+                            media="(min-width: 901px)"
+                            srcSet={imageLarge2}
+                        />
+                        <img
+                            src={imageMedium2}
+                            alt="audio controller"
+                            className="image"
+                        />
+                    </picture>
                 </div>
             </section>
             <section className="section-playlists u-section-padding">

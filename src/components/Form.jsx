@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-//const URL = 'http://localhost:3003/submit-form';
+const URL = 'http://localhost:3003/submit-form';
 
 export default function Form() {
     const [email, setEmail] = useState('');
@@ -16,7 +16,7 @@ export default function Form() {
         formData.append('filename', file);
 
         try {
-            const response = await fetch('http://wdp.lt:8080/submit-form', {
+            const response = await fetch(URL, {
                 method: 'POST',
                 body: formData,
             });
@@ -29,6 +29,7 @@ export default function Form() {
                 alert('Error sending message');
             }
         } catch (error) {
+            console.error('There was an error:', error);
             alert('There was an error sending your message.');
         }
         setEmail('');

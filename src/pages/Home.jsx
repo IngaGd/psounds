@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 
 import useGenerateAlbumList from '../customHooks/useGenerateAlbumList';
 
-import image1 from '../assets/images/images/HOME/1.JPG';
-import image2 from '../assets/images/images/HOME/2.JPG';
-import image3 from '../assets/images/images/HOME/3.JPG';
+import imageLarge1 from '../assets/images/images/HOME/1-large.jpg';
+import imageMedium1 from '../assets/images/images/HOME/1-medium.jpg';
+import imageSmall1 from '../assets/images/images/HOME/1-small.jpg';
+import imageLarge2 from '../assets/images/images/HOME/2-large.jpg';
+import imageMedium2 from '../assets/images/images/HOME/2-medium.jpg';
+import imageSmall2 from '../assets/images/images/HOME/2-small.jpg';
+import imageLarge3 from '../assets/images/images/HOME/3-large.jpg';
+import imageMedium3 from '../assets/images/images/HOME/3-medium.jpg';
+import imageSmall3 from '../assets/images/images/HOME/3-small.jpg';
 import Footer from '../components/Footer';
 
 export default function Home({ cvSections, productionHighlight }) {
@@ -15,7 +21,25 @@ export default function Home({ cvSections, productionHighlight }) {
         <>
             <section className="section-hero">
                 <div className="image-box-header">
-                    <img src={image1} alt="" className="image" />
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcSet={imageSmall1}
+                        />
+                        <source
+                            media="(max-width: 900px)"
+                            srcSet={imageMedium1}
+                        />
+                        <source
+                            media="(min-width: 901px)"
+                            srcSet={imageLarge1}
+                        />
+                        <img
+                            src={imageMedium1}
+                            alt="audio equipment"
+                            className="image"
+                        />
+                    </picture>
                 </div>
             </section>
             <section className="section-about u-section-padding">
@@ -36,7 +60,7 @@ export default function Home({ cvSections, productionHighlight }) {
                                         - {desc}{' '}
                                     </Link>
                                 ) : (
-                                    <p key={index}> - {desc}</p>
+                                    <span key={index}> - {desc}</span>
                                 )
                             )}
                         </p>
@@ -47,7 +71,7 @@ export default function Home({ cvSections, productionHighlight }) {
                         </h2>
                         <p className="paragraph">
                             {cvSections[0].description.map((desc, index) => (
-                                <p key={index}> - {desc}</p>
+                                <span key={index}> - {desc}</span>
                             ))}
                         </p>
                     </div>
@@ -70,7 +94,7 @@ export default function Home({ cvSections, productionHighlight }) {
                                         </span>
                                     </React.Fragment>
                                 ) : (
-                                    <p key={index}> - {desc}</p>
+                                    <span key={index}> - {desc}</span>
                                 )
                             )}
                         </p>
@@ -80,7 +104,25 @@ export default function Home({ cvSections, productionHighlight }) {
 
             <section className="section-image">
                 <div className="image-box-full-screen">
-                    <img src={image2} alt="" className="image" />
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcSet={imageSmall2}
+                        />
+                        <source
+                            media="(max-width: 900px)"
+                            srcSet={imageMedium2}
+                        />
+                        <source
+                            media="(min-width: 901px)"
+                            srcSet={imageLarge2}
+                        />
+                        <img
+                            src={imageMedium2}
+                            alt="profile"
+                            className="image"
+                        />
+                    </picture>
                 </div>
             </section>
 
@@ -101,7 +143,25 @@ export default function Home({ cvSections, productionHighlight }) {
             </section>
             <section className="section-image">
                 <div className="image-box-full-screen">
-                    <img src={image3} alt="" className="image" />
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcSet={imageSmall3}
+                        />
+                        <source
+                            media="(max-width: 900px)"
+                            srcSet={imageMedium3}
+                        />
+                        <source
+                            media="(min-width: 901px)"
+                            srcSet={imageLarge3}
+                        />
+                        <img
+                            src={imageMedium3}
+                            alt="studio, computer, workplace"
+                            className="image"
+                        />
+                    </picture>
                 </div>
             </section>
             <Footer />

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import image1 from '../assets/images/images/BIO/1.JPG';
+import imageLarge1 from '../assets/images/images/BIO/1-large.jpg';
+import imageMedium1 from '../assets/images/images/BIO/1-medium.jpg';
+import imageSmall1 from '../assets/images/images/BIO/1-small.jpg';
 import Contribute from '../components/Contribute';
-// import image2 from '../../assets/images/images/Bio/use15.JPG';
-// import image3 from '../../assets/images/images/Bio/use16.JPG';
-// import image4 from '../../assets/images/images/Bio/use17.JPG';
 
 export default function Bio({ bio }) {
     return (
@@ -16,17 +15,28 @@ export default function Bio({ bio }) {
                     </h2>
                     <div className="col-6-of-12">
                         <div className="image-box">
-                            <img
-                                src={image1}
-                                alt=""
-                                className="image-box__image"
-                            />
+                            <picture>
+                                <source
+                                    media="(max-width: 600px)"
+                                    srcSet={imageSmall1}
+                                />
+                                <source
+                                    media="(max-width: 900px)"
+                                    srcSet={imageMedium1}
+                                />
+                                <source
+                                    media="(min-width: 901px)"
+                                    srcSet={imageLarge1}
+                                />
+                                <img
+                                    src={imageMedium1}
+                                    alt="profile"
+                                    className="image-box__image"
+                                />
+                            </picture>
                         </div>
                     </div>
                     <div className="col-6-of-12">
-                        {/* <p className="paragraph">{bio[0].description}</p>
-                        <p className="paragraph">{bio[1].description}</p>
-                        <p className="paragraph">{bio[2].description}</p> */}
                         {bio?.map((b) => (
                             <p
                                 className="paragraph u-justify u-margin-bottom-medium"

@@ -32,7 +32,7 @@ const productionHighlightList = {
         {
             id: uuidv4(),
             title: 'Firefly - We Can Get There.mp3',
-            track: URL + '6._Firefly_ - _We_Can_Get_There.mp3'
+            track: URL + '6._Firefly_-_We_Can_Get_There.mp3'
         },
         {
             id: uuidv4(),
