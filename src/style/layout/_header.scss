@@ -3,6 +3,10 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.header.show {
+    transition: transform 0.3s ease-in-out;
+}
+
 .header {
     background-color: $color-grey-light-1;
     display: flex;
