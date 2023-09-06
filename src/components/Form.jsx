@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const URL = 'http://localhost:3003/submit-form';
+const URL = 'http://wdp.lt:8080/submit-form';
 
 export default function Form() {
     const [email, setEmail] = useState('');
