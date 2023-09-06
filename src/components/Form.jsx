@@ -13,7 +13,9 @@ export default function Form() {
         const formData = new FormData();
         formData.append('email', email);
         formData.append('message', message);
-        formData.append('filename', file);
+        if (file) {
+            formData.append('filename', file);
+        }
 
         try {
             const response = await fetch(URL, {
@@ -34,7 +36,7 @@ export default function Form() {
         }
         setEmail('');
         setMessage('');
-        setFile(false);
+        setFile(null);
     };
 
     return (

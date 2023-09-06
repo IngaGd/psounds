@@ -11,27 +11,24 @@ export default function Contact() {
                 <div className="col-6-of-12">
                     <a
                         href="mailto:vytautas@palmsstudio.lt"
-                        className="contacts-box__contacts"
+                        className="contacts"
                     >
                         vytautas@palmsstudio.lt
                     </a>
                     <br />
                     <a
                         href="https://www.instagram.com/pppsound/"
-                        className="contacts-box__contacts fa fa-instagram"
+                        className="contacts fa fa-instagram"
                     >
                         <span className="visually-hidden">Instagram</span>
                     </a>
                     <br />
-                    <a
-                        href="tel:+37069319891"
-                        className="contacts-box__contacts"
-                    >
+                    <a href="tel:+37069319891" className="contacts">
                         (+370) 693-19891
                     </a>
                     <br />
                     <a
-                        className="contacts-box__contacts"
+                        className="contacts"
                         href="https://goo.gl/maps/UnQjjDY9XcgpAhtC7"
                         target="_blank"
                         rel="noopener noreferrer"
