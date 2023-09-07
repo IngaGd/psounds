@@ -144,21 +144,6 @@ export default function Audio({
                 <div className="row bottom-border">
                     <div className="playlists__subtitle">
                         <h3 className="heading-tertiary u-margin-bottom-small">
-                            Collabs
-                        </h3>
-                    </div>
-                    {useGenerateAlbumList(
-                        collabs,
-                        playingAudio,
-                        playingTrackId,
-                        setPlayingTrackId
-                    )}
-                </div>
-            </section>
-            <section className="section-playlists u-section-padding-bottom">
-                <div className="row bottom-border">
-                    <div className="playlists__subtitle">
-                        <h3 className="heading-tertiary u-margin-bottom-small">
                             Late production
                         </h3>
                     </div>

@@ -51,7 +51,7 @@ export default function Home({ cvSections, productionHighlight }) {
                         <h2 className="heading-tertiary  u-margin-bottom-medium">
                             {cvSections[1].title}
                         </h2>
-                        <p className="paragraph ">
+                        <div className="paragraph ">
                             {cvSections[1].description.map((desc, index) =>
                                 desc ===
                                 'Let’s connect and talk about your next project' ? (
@@ -60,26 +60,26 @@ export default function Home({ cvSections, productionHighlight }) {
                                         - {desc}{' '}
                                     </Link>
                                 ) : (
-                                    <span key={index}> - {desc}</span>
+                                    <p key={index}> - {desc}</p>
                                 )
                             )}
-                        </p>
+                        </div>
                     </div>
                     <div className="col-4-of-12 mob-flex">
                         <h2 className="heading-tertiary u-margin-bottom-medium">
                             {cvSections[0].title}
                         </h2>
-                        <p className="paragraph">
+                        <div className="paragraph">
                             {cvSections[0].description.map((desc, index) => (
-                                <span key={index}> - {desc}</span>
+                                <p key={index}> - {desc}</p>
                             ))}
-                        </p>
+                        </div>
                     </div>
                     <div className="col-4-of-12 mob-flex">
                         <h2 className="heading-tertiary u-margin-bottom-medium">
                             {cvSections[2].title}
                         </h2>
-                        <p className="paragraph">
+                        <div className="paragraph">
                             {cvSections[2].description.map((desc, index) =>
                                 desc ===
                                 'Let’s connect and talk about your next project' ? (
@@ -94,10 +94,10 @@ export default function Home({ cvSections, productionHighlight }) {
                                         </span>
                                     </React.Fragment>
                                 ) : (
-                                    <span key={index}> - {desc}</span>
+                                    <p key={index}> - {desc}</p>
                                 )
                             )}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </section>

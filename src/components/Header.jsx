@@ -31,22 +31,24 @@ export default function Header() {
                     <img className="logo" src={logo} alt="Logo" />
                 </Link>
             </div>
-            <nav className="header__nav-desktop row">
-                <div className="nav-links">
-                    <Link className="nav-link" to="/audio">
-                        Audio
-                    </Link>
-                    <Link className="nav-link" to="/services">
-                        Services
-                    </Link>
-                    <Link className="nav-link" to="/bio">
-                        Bio
-                    </Link>
-                    <Link className="nav-link" to="/contact">
-                        Contact
-                    </Link>
-                </div>
-            </nav>
+            <div className="row-flex">
+                <nav className="header__nav-desktop">
+                    <div className="nav-links">
+                        <Link className="nav-link" to="/audio">
+                            Audio
+                        </Link>
+                        <Link className="nav-link" to="/services">
+                            Services
+                        </Link>
+                        <Link className="nav-link" to="/bio">
+                            Bio
+                        </Link>
+                        <Link className="nav-link" to="/contact">
+                            Contact
+                        </Link>
+                    </div>
+                </nav>
+            </div>
             <div className="header__nav-mob">
                 <button onClick={openPopup} className="btn-icons">
                     <IoMenuOutline />
@@ -97,6 +99,7 @@ export default function Header() {
                     </div>
                 </div>
             </div>
+            <div className="header__placeholder"></div>
         </header>
     );
 }
