@@ -1,4 +1,13 @@
 import React, { useState } from 'react';
+import DOMPurify from 'dompurify';
+
+import validateAndSetFile from '../utils/formValidation/validateAndSetFile';
+import validateAndSetMessage from '../utils/formValidation/validateAndSetMessage';
+
+const MAX_FILE_SIZE = 1024 * 1024 * 10;
+const ALLOWED_FILE_TYPES = ['audio/mpeg', 'audio/wav', 'audio/mp3'];
+const MIN_MESSAGE_LENGTH = 1;
+const MAX_MESSAGE_LENGTH = 5000;
 
 const URL = 'http://wdp.lt:8080/submit-form';
 
@@ -7,6 +16,32 @@ export default function Form() {
     const [message, setMessage] = useState('');
     const [file, setFile] = useState(null);
 
+    //Validations for file upload
+
+    const handleFileChange = (e) => {
+        const selectedFile = e.target.files[0];
+        validateAndSetFile(
+            selectedFile,
+            setFile,
+            MAX_FILE_SIZE,
+            ALLOWED_FILE_TYPES
+        );
+    };
+
+    //Validation for message input
+    const sanitizedMessage = DOMPurify.sanitize(message);
+
+    const handeMessageChange = (e) => {
+        const selectedMessage = e.target.value;
+        validateAndSetMessage(
+            selectedMessage,
+            setMessage,
+            MIN_MESSAGE_LENGTH,
+            MAX_MESSAGE_LENGTH
+        );
+    };
+
+    //Form submit logic
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -60,8 +95,8 @@ export default function Form() {
                         cols="30"
                         rows="10"
                         placeholder="message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        value={sanitizedMessage}
+                        onChange={handeMessageChange}
                     ></textarea>
                 </div>
                 <div className="cell-1">
@@ -69,7 +104,7 @@ export default function Form() {
                         type="file"
                         id="myFile"
                         name="filename"
-                        onChange={(e) => setFile(e.target.files[0])}
+                        onChange={handleFileChange}
                     />
                 </div>
                 <input type="submit" className="submit-btn" />
