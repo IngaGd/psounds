@@ -1,20 +1,21 @@
-const validateAndSetFile = (file, setFile, maxSize, allowedTypes) => {
+const validateAndSetFile = (file, setFile, maxSize, allowedTypes, setFileError) => {
 
     if (!file) {
-        alert('No file selected.');
+        setFileError('No file selected.');
         return;
     }
 
     if (!allowedTypes.includes(file.type)) {
-        alert('Invalid file type.Please select an allowed file type.');
+        setFileError('Invalid file type.Please select an allowed file types: OGG, AAC, MP3, WAV, AIFF.');
         return;
     }
 
     if (file.size > maxSize) {
-        alert('File size exceeds the allowed limit.');
+        setFileError('File size exceeds the allowed limit - 15MB.');
         return;
     }
 
+    setFileError(null);
     setFile(file);
 
 }

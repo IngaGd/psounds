@@ -1,23 +1,22 @@
-const validateAndSetMessage = (message, setMessage, minSize, maxSize) => {
-    const errors = [];
+const validateAndSetMessage = (message, setMessage, minSize, maxSize, setMessageError) => {
 
     if (!message) {
-        errors.push('Please write a message.');
+        setMessageError('Please write a message.');
+        return;
     }
 
     if (message.length < minSize) {
-        errors.push('Message is too short.');
+        setMessageError('Message is too short.');
+        return;
     }
 
     if (message.length > maxSize) {
-        errors.push('Message is too long. 5000 characters are allowed.');
+        setMessageError('Message is too long. 5000 characters are allowed.');
+        return;
     }
+    setMessageError(null);
+    setMessage(message);
 
-    if (errors.length > 0) {
-        alert(errors.join('\n'));
-    } else {
-        setMessage(message);
-    }
 };
 
 export default validateAndSetMessage;

@@ -3,9 +3,21 @@ import DOMPurify from 'dompurify';
 
 import validateAndSetFile from '../utils/formValidation/validateAndSetFile';
 import validateAndSetMessage from '../utils/formValidation/validateAndSetMessage';
+import validateAndSetEmail from '../utils/formValidation/validateAndSetEmail';
 
 const MAX_FILE_SIZE = 1024 * 1024 * 10;
-const ALLOWED_FILE_TYPES = ['audio/mpeg', 'audio/wav', 'audio/mp3'];
+const ALLOWED_FILE_TYPES = [
+    'audio/OGG',
+    'audio/ogg',
+    'audio/AAC',
+    'audio/aac',
+    'audio/AIFF',
+    'audio/aiff',
+    'audio/WAV',
+    'audio/wav',
+    'audio/MPEG',
+    'audio/mpeg',
+];
 const MIN_MESSAGE_LENGTH = 1;
 const MAX_MESSAGE_LENGTH = 5000;
 
@@ -15,6 +27,22 @@ export default function Form() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [file, setFile] = useState(null);
+    const [emailError, setEmailError] = useState(null);
+    const [fileError, setFileError] = useState(null);
+
+    //Validate email
+
+    const handleEmailChange = (e) => {
+        const selectedEmail = e.target.value;
+        const isValidEmail = validateAndSetEmail(selectedEmail, setEmail);
+        if (!isValidEmail) {
+            setTimeout(() => {
+                setEmailError('Please enter a valid email.');
+            }, 5000);
+        } else {
+            setEmailError(null);
+        }
+    };
 
     //Validations for file upload
 
@@ -24,8 +52,13 @@ export default function Form() {
             selectedFile,
             setFile,
             MAX_FILE_SIZE,
-            ALLOWED_FILE_TYPES
+            ALLOWED_FILE_TYPES,
+            setFileError
         );
+
+        if (selectedFile && ALLOWED_FILE_TYPES.includes(selectedFile.type)) {
+            setFileError(null);
+        }
     };
 
     //Validation for message input
@@ -44,6 +77,11 @@ export default function Form() {
     //Form submit logic
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // if (error) {
+        //     // If there's an error, prevent form submission
+        //     return;
+        // }
 
         const formData = new FormData();
         formData.append('email', email);
@@ -76,6 +114,7 @@ export default function Form() {
 
     return (
         <div className="form-box">
+            {emailError && <div className="error-message">{emailError}</div>}
             <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="cell-1">
                     <input
@@ -85,7 +124,7 @@ export default function Form() {
                         required
                         placeholder="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleEmailChange}
                     />
                 </div>
                 <div className="cell-1">
@@ -99,6 +138,7 @@ export default function Form() {
                         onChange={handeMessageChange}
                     ></textarea>
                 </div>
+                {fileError && <div className="error-message">{fileError}</div>}
                 <div className="cell-1">
                     <input
                         type="file"

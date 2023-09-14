@@ -17,6 +17,17 @@
             textarea:focus {
                 outline: none;
             }
+            .file-input {
+                font-size: 1.4rem;
+                // display: inline-block;
+                // padding: 10px;
+                // background-color: #eee;
+                // border: 1px solid #ccc;
+                // cursor: pointer;
+            }
+            // input[type='file'] {
+            //     display: none;
+            // }
         }
         .submit-btn {
             width: 10rem;
