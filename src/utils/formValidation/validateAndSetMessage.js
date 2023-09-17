@@ -1,12 +1,7 @@
-const validateAndSetMessage = (message, setMessage, minSize, maxSize, setMessageError) => {
+const validateAndSetMessage = (message, setMessage, maxSize, setMessageError) => {
 
     if (!message) {
         setMessageError('Please write a message.');
-        return;
-    }
-
-    if (message.length < minSize) {
-        setMessageError('Message is too short.');
         return;
     }
 

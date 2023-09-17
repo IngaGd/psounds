@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import validateAndSetFile from '../utils/formValidation/validateAndSetFile';
 import validateAndSetMessage from '../utils/formValidation/validateAndSetMessage';
 
-const URL = 'http://wdp.lt:8080/submit-form';
+const URL = 'http://localhost:3003/submit-form';
 
-export default function FormNew() {
+export default function FormNewSecond() {
     const [email, setEmail] = useState('');
     const [error, setError] = useState(null);
     const [file, setFile] = useState(null);
@@ -48,7 +47,7 @@ export default function FormNew() {
         return isValid;
     }
 
-    function handleSubmit(e) {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         //Emali validation
@@ -81,23 +80,39 @@ export default function FormNew() {
         formData.append('message', message);
         formData.append('file', file);
 
-        axios
-            .put(URL, formData)
-            .then(() => {
-                setSuccessMessage('Your email is confirmed!');
-                setSubmitted(true);
-                setMessage('');
-                setEmail('');
-                setFile(null);
-            })
-            .catch(() => {
-                setError('Failed to submit.');
-                setMessage('');
-                setEmail('');
-                setFile(null);
-                setSubmitted(false);
+        // Using async/await with fetch instead of axios
+        try {
+            const response = await fetch(URL, {
+                method: 'PUT', // Using PUT as before
+                body: formData,
             });
-    }
+
+            if (!response.ok) {
+                // Check if response failed
+                throw new Error('Network response was not ok');
+            }
+
+            if (!response.ok) {
+                // Check if response failed
+                throw new Error('Network response was not ok');
+            }
+
+            const responseData = await response.json();
+            console.log('responseData: ', responseData);
+
+            setSuccessMessage('Your email is confirmed!');
+            setSubmitted(true);
+            setMessage('');
+            setEmail('');
+            setFile(null);
+        } catch (error) {
+            setError('Failed to submit.');
+            setMessage('');
+            setEmail('');
+            setFile(null);
+            setSubmitted(false);
+        }
+    };
 
     function handleClear() {
         setEmail('');

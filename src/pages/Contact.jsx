@@ -1,6 +1,5 @@
 import React from 'react';
-// import Form from '../components/Form';
-import FormNew from '../components/FormNew';
+import Form from '../components/Form';
 
 export default function Contact() {
     return (
@@ -38,7 +37,7 @@ export default function Contact() {
                     </a>
                 </div>
                 <div className="col-6-of-12">
-                    <FormNew />
+                    <Form />
                 </div>
             </div>
         </section>
