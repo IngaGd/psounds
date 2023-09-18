@@ -8,7 +8,7 @@ import validateEmail from '../utils/formValidation/validateEmail';
 const URL = 'http://localhost:3003/submit-form';
 // const URL = 'http://wdp.lt:8080/submit-form';
 
-const MAX_FILE_SIZE = 1024 * 1024 * 10;
+const MAX_FILE_SIZE = 1024 * 1024 * 15;
 const ALLOWED_FILE_TYPES = [
     'audio/OGG',
     'audio/ogg',
@@ -34,9 +34,6 @@ export default function Form() {
 
     const [submissionSuccsess, setSubmissionSuccsess] = useState('');
     const [submissionFail, setSubmissionFail] = useState('');
-
-    // const [error, setError] = useState(null);
-    // const [successMessage, setSuccessMessage] = useState(null);
 
     //Validate email
     const handleEmailChange = (e) => {
@@ -124,14 +121,6 @@ export default function Form() {
         setFile(null);
     };
 
-    // useEffect(() => {
-    //     return () => {
-    //         if (timeoutId) {
-    //             clearTimeout(timeoutId);
-    //         }
-    //     };
-    // }, [timeoutId]);
-
     return (
         <div className="form-box">
             <div className="messages">
@@ -182,6 +171,7 @@ export default function Form() {
                         type="file"
                         id="myFile"
                         name="filename"
+                        // onChange={(e) => setFile(e.target.files[0])}
                         onChange={handleFileChange}
                     />
                 </div>
