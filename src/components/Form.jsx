@@ -10,9 +10,6 @@ const BASE_URL = process.env.REACT_APP_API_URL.endsWith('/')
     : process.env.REACT_APP_API_URL + '/';
 const URL = BASE_URL + 'submit-form';
 
-// const URL = 'http://localhost:3003/submit-form';
-console.log(process.env.REACT_APP_API_URL);
-
 const MAX_FILE_SIZE = 1024 * 1024 * 15;
 const ALLOWED_FILE_TYPES = [
     'audio/OGG',
@@ -158,7 +155,6 @@ export default function Form() {
                         required
                         placeholder="email"
                         value={email}
-                        // onChange={(e) => setEmail(e.target.value)}
                         onChange={handleEmailChange}
                     />
                 </div>
@@ -182,7 +178,6 @@ export default function Form() {
                         type="file"
                         id="myFile"
                         name="filename"
-                        // onChange={(e) => setFile(e.target.files[0])}
                         onChange={handleFileChange}
                     />
                 </div>
