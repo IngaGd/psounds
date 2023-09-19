@@ -5,8 +5,13 @@ import validateAndSetFile from '../utils/formValidation/validateAndSetFile';
 import validateAndSetMessage from '../utils/formValidation/validateAndSetMessage';
 import validateEmail from '../utils/formValidation/validateEmail';
 
-const BASE_URL = process.env.REACT_APP_API_URL;
+const BASE_URL = process.env.REACT_APP_API_URL.endsWith('/')
+    ? process.env.REACT_APP_API_URL
+    : process.env.REACT_APP_API_URL + '/';
 const URL = BASE_URL + 'submit-form';
+
+// const URL = 'http://localhost:3003/submit-form';
+console.log(process.env.REACT_APP_API_URL);
 
 const MAX_FILE_SIZE = 1024 * 1024 * 15;
 const ALLOWED_FILE_TYPES = [
@@ -103,18 +108,24 @@ export default function Form() {
                 method: 'POST',
                 body: formData,
             });
-            const serverResponse = await response.json();
-            if (response.ok) {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const text = await response.text();
+            try {
+                const serverResponse = JSON.parse(text);
                 setSubmissionSuccsess(serverResponse.message);
                 setTimeout(() => {
                     setSubmissionSuccsess('');
                 }, 3000);
-            } else {
-                setSubmissionFail(serverResponse.message);
+            } catch (err) {
+                console.error('Failed to parse JSON:', text);
+                setSubmissionFail('Server returned an unexpected response.');
             }
         } catch (error) {
-            console.error('Therex was an error:', error);
+            console.error('There was an error:', error);
             alert('There was an error sending your message.');
+            setSubmissionFail(error.message);
         }
         setEmail('');
         setMessage('');
