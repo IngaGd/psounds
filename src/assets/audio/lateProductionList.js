@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
-const URL = 'http://wdp.lt:8080/audio/lateProduction/';
+const BASE_URL = process.env.REACT_APP_API_URL;
+const URL = BASE_URL + 'audio/lateProduction/';
 
 const lateProductionList = {
     lateProduction: [

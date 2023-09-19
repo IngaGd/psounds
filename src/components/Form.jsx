@@ -5,8 +5,8 @@ import validateAndSetFile from '../utils/formValidation/validateAndSetFile';
 import validateAndSetMessage from '../utils/formValidation/validateAndSetMessage';
 import validateEmail from '../utils/formValidation/validateEmail';
 
-const URL = 'http://localhost:3003/submit-form';
-// const URL = 'http://wdp.lt:8080/submit-form';
+const BASE_URL = process.env.REACT_APP_API_URL;
+const URL = BASE_URL + 'submit-form';
 
 const MAX_FILE_SIZE = 1024 * 1024 * 15;
 const ALLOWED_FILE_TYPES = [
