@@ -1,0 +1,14 @@
+.success-message {
+    color: green;
+}
+.error-message {
+    color: crimson;
+}
+.success-message,
+.error-message {
+    font-size: 14px;
+    font-weight: 500;
+    @include respond(phone) {
+        font-size: 12px;
+    }
+}
