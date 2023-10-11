@@ -50,7 +50,7 @@ export default function Header() {
                 </nav>
             </div>
             <div className="header__nav-mob">
-                <button onClick={openPopup} className="btn-icons">
+                <button onClick={openPopup} className="btn-icons bars">
                     <IoMenuOutline />
                 </button>
             </div>

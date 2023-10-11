@@ -13,9 +13,23 @@
         padding-left: 4rem;
         padding-right: 4rem;
         .mob-flex {
+            .paragraph {
+                @include respond(tab-port) {
+                    width: 37rem;
+                }
+                @include respond(phone) {
+                    width: 32rem;
+                }
+            }
             .heading-tertiary {
                 @include respond(phone) {
                     text-align: center;
+                }
+                @include respond(tab-port) {
+                    height: 3rem;
+                }
+                @include respond(desktop) {
+                    height: 6rem;
                 }
             }
             @include respond(tab-port) {

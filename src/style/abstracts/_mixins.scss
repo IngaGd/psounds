@@ -74,6 +74,12 @@ $breakpoint argument choise:
             @content;
         }
     }
+    @if $breakpoint == desktop {
+        @media (max-width: 88.1875em) {
+            //1411px
+            @content;
+        }
+    }
     @if $breakpoint == big-desktop {
         @media (min-width: 112.5em) {
             //1800px

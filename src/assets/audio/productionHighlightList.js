@@ -7,6 +7,11 @@ const productionHighlightList = {
     productionHighlight: [
         {
             id: uuidv4(),
+            title: 'Baltic Balkan - Wedding Hangover Day 1',
+            track: URL + 'BB weddeing hangover day1.mp3'
+        },
+        {
+            id: uuidv4(),
             title: 'Pete Roche x Zalvarinis.mp3',
             track: URL + '1._Pete_Roche_x_Zalvarinis.mp3'
         },

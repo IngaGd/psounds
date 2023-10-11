@@ -27,11 +27,13 @@
     &__nav-mob {
         @include respond(width-for-header-breakpoint) {
             display: block;
-            padding-right: 4rem;
             .fa-bars {
                 font-size: 4rem;
                 color: $color-grey-dark;
             }
+        }
+        @include respond(phone) {
+            padding-right: 4rem;
         }
     }
     &__nav-desktop {
