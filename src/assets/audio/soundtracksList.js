@@ -76,6 +76,5 @@ const soundtracksList = {
             track: URL + 'Video Game 11.mp3'
         }
     ]
-
 }
 export default soundtracksList;

@@ -132,6 +132,5 @@ const productionHighlightList = {
             track: URL + '23._Afrodelic_-_ITara_Fan_Fan_(Pete_Roche_remix).mp3'
         }
     ]
-
 }
 export default productionHighlightList;

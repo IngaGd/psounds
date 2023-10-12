@@ -3,33 +3,53 @@
     margin: 0 auto;
     padding-top: 0;
     padding-bottom: 0;
-
     &.small {
         max-width: $grid-small;
     }
-
     &.big {
         max-width: $grid-big;
         padding-left: 4rem;
         padding-right: 4rem;
         .mob-flex {
             .paragraph {
+                width: 46rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                @include respond(desktop) {
+                    width: 38rem;
+                }
+                @include respond(tab-land) {
+                    width: 28rem;
+                }
                 @include respond(tab-port) {
-                    width: 37rem;
+                    width: 32rem;
                 }
                 @include respond(phone) {
                     width: 32rem;
                 }
             }
             .heading-tertiary {
-                @include respond(phone) {
-                    text-align: center;
+                @include respond(desktop) {
+                    height: 6rem;
+                }
+                @include respond(tab-land) {
+                    height: 4.5rem;
                 }
                 @include respond(tab-port) {
                     height: 3rem;
+                    text-align: center;
                 }
-                @include respond(desktop) {
-                    height: 6rem;
+                @include respond(phone) {
+                    height: 2rem;
+                    font-size: 1.6rem;
+                }
+            }
+            .third {
+                .paragraph-inner-box {
+                    // background-color: white;
+                    // width: 32rem;
                 }
             }
             @include respond(tab-port) {
@@ -40,28 +60,23 @@
             }
         }
     }
-
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
         @include respond(tab-port) {
             margin-bottom: $gutter-vertical-small;
         }
     }
-
     @include respond(tab-land) {
         padding-left: 6rem;
         padding-right: 6rem;
     }
-
     @include respond(tab-port) {
         padding-left: 4rem;
         padding-right: 4rem;
     }
-
     @include clearfix;
-
-    //elements with atributes class which has start col-
     [class^='col-'] {
+        //elements with atributes class which has start col-
         float: left;
 
         &:not(:last-child) {

@@ -66,6 +66,5 @@ const earlyProductionList = {
             track: URL + 'Wet_paper_-_play.mp3'
         }
     ]
-
 }
 export default earlyProductionList;

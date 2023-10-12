@@ -66,7 +66,6 @@ const collabsAlbumList = {
             track: URL + 'Papuga X Taddtheartist - Magic Plant.mp3'
         }
     ]
-
 }
 export default collabsAlbumList;
 

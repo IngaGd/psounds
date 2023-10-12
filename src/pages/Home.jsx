@@ -47,56 +47,78 @@ export default function Home({ cvSections, productionHighlight }) {
                     <h1 className="heading-primary u-center-text u-margin-bottom-big">
                         Vytautas Petrošius
                     </h1>
-                    <div className="col-4-of-12 mob-flex">
-                        <h2 className="heading-tertiary  u-margin-bottom-medium">
-                            {cvSections[1].title}
-                        </h2>
-                        <div className="paragraph ">
-                            {cvSections[1].description.map((desc, index) =>
-                                desc ===
-                                'Let’s connect and talk about your next project' ? (
-                                    <Link className="link" to="/contact">
-                                        {' '}
-                                        - {desc}{' '}
-                                    </Link>
-                                ) : (
-                                    <p key={index}> - {desc}</p>
-                                )
-                            )}
+                    <div>
+                        <div className="col-4-of-12 mob-flex">
+                            <div className="paragraph ">
+                                <div className="paragraph-inner-box">
+                                    {' '}
+                                    <h2 className="heading-tertiary  u-margin-bottom-medium">
+                                        {cvSections[1].title}
+                                    </h2>
+                                    {cvSections[1].description.map(
+                                        (desc, index) =>
+                                            desc ===
+                                            'Let’s connect and talk about your next project' ? (
+                                                <Link
+                                                    className="link"
+                                                    to="/contact"
+                                                >
+                                                    {' '}
+                                                    - {desc}{' '}
+                                                </Link>
+                                            ) : (
+                                                <p key={index}> - {desc}</p>
+                                            )
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-4-of-12 mob-flex">
-                        <h2 className="heading-tertiary u-margin-bottom-medium">
-                            {cvSections[0].title}
-                        </h2>
-                        <div className="paragraph">
-                            {cvSections[0].description.map((desc, index) => (
-                                <p key={index}> - {desc}</p>
-                            ))}
+                        <div className="col-4-of-12 mob-flex">
+                            <div className="paragraph">
+                                <div className="paragraph-inner-box">
+                                    <h2 className="heading-tertiary u-margin-bottom-medium">
+                                        {cvSections[0].title}
+                                    </h2>{' '}
+                                    {cvSections[0].description.map(
+                                        (desc, index) => (
+                                            <p key={index}> - {desc}</p>
+                                        )
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-4-of-12 mob-flex">
-                        <h2 className="heading-tertiary u-margin-bottom-medium">
-                            {cvSections[2].title}
-                        </h2>
-                        <div className="paragraph">
-                            {cvSections[2].description.map((desc, index) =>
-                                desc ===
-                                'Let’s connect and talk about your next project' ? (
-                                    <React.Fragment key={index}>
-                                        <span>- </span>
-                                        <Link className="link" to="/contact">
-                                            <span>Let’s connect</span>
-                                        </Link>
-                                        <span>
-                                            {' '}
-                                            and talk about your next project
-                                        </span>
-                                    </React.Fragment>
-                                ) : (
-                                    <p key={index}> - {desc}</p>
-                                )
-                            )}
+                        <div className="col-4-of-12 mob-flex">
+                            <div className="paragraph ">
+                                <div className="paragraph-inner-box">
+                                    <h2 className="heading-tertiary u-margin-bottom-medium">
+                                        {cvSections[2].title}
+                                    </h2>
+                                    {cvSections[2].description.map(
+                                        (desc, index) =>
+                                            desc ===
+                                            'Let’s connect and talk about your next project' ? (
+                                                <React.Fragment key={index}>
+                                                    <span>- </span>
+                                                    <Link
+                                                        className="link"
+                                                        to="/contact"
+                                                    >
+                                                        <span>
+                                                            Let’s connect
+                                                        </span>
+                                                    </Link>
+                                                    <span>
+                                                        {' '}
+                                                        and talk about your next
+                                                        project
+                                                    </span>
+                                                </React.Fragment>
+                                            ) : (
+                                                <p key={index}> - {desc}</p>
+                                            )
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

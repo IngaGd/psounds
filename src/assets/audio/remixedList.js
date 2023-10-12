@@ -66,6 +66,5 @@ const remixedList = {
             track: URL + 'The Sneekers - Muzikos (Papuga remix).mp3'
         }
     ]
-
 }
 export default remixedList;
