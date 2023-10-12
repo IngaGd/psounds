@@ -17,6 +17,11 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                .paragraph-inner-box {
+                    p {
+                        text-align: left;
+                    }
+                }
                 @include respond(desktop) {
                     width: 38rem;
                 }
@@ -44,12 +49,6 @@
                 @include respond(phone) {
                     height: 2rem;
                     font-size: 1.6rem;
-                }
-            }
-            .third {
-                .paragraph-inner-box {
-                    // background-color: white;
-                    // width: 32rem;
                 }
             }
             @include respond(tab-port) {
