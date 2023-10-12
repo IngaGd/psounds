@@ -10,6 +10,14 @@
         max-width: $grid-big;
         padding-left: 4rem;
         padding-right: 4rem;
+        .heading-primary.mob {
+            @include respond(tab-port) {
+                margin-bottom: 4rem;
+            }
+        }
+        .col-4-of-12 .mob-flex {
+            margin-bottom: 0;
+        }
         .mob-flex {
             .paragraph {
                 width: 46rem;
@@ -19,7 +27,8 @@
                 justify-content: center;
                 .paragraph-inner-box {
                     p {
-                        text-align: left;
+                        hyphens: auto;
+                        word-wrap: break-word;
                     }
                 }
                 @include respond(desktop) {
@@ -49,6 +58,11 @@
                 @include respond(phone) {
                     height: 2rem;
                     font-size: 1.6rem;
+                }
+            }
+            .mid {
+                @include respond(phone) {
+                    text-align: left;
                 }
             }
             @include respond(tab-port) {

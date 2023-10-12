@@ -44,7 +44,7 @@ export default function Home({ cvSections, productionHighlight }) {
             </section>
             <section className="section-about u-section-padding">
                 <div className="row big">
-                    <h1 className="heading-primary u-center-text u-margin-bottom-big">
+                    <h1 className="heading-primary mob u-center-text u-margin-bottom-big">
                         Vytautas Petrošius
                     </h1>
                     <div>
@@ -76,7 +76,7 @@ export default function Home({ cvSections, productionHighlight }) {
                         <div className="col-4-of-12 mob-flex">
                             <div className="paragraph">
                                 <div className="paragraph-inner-box">
-                                    <h2 className="heading-tertiary u-margin-bottom-medium">
+                                    <h2 className="heading-tertiary mid u-margin-bottom-medium">
                                         {cvSections[0].title}
                                     </h2>{' '}
                                     {cvSections[0].description.map(

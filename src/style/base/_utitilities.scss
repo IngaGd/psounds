@@ -29,11 +29,11 @@
 
 .u-section-padding {
     padding: 10rem 0;
-    @include respond(tab-port) {
-        padding: 4rem 0;
-    }
     @include respond(tab-land) {
         padding: 6rem 0;
+    }
+    @include respond(tab-port) {
+        padding: 4rem 0;
     }
 }
 
