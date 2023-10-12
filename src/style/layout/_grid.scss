@@ -60,11 +60,11 @@
                     font-size: 1.6rem;
                 }
             }
-            .mid {
-                @include respond(phone) {
-                    text-align: left;
-                }
-            }
+            // .mid {
+            //     @include respond(phone) {
+            //         text-align: left;
+            //     }
+            // }
             @include respond(tab-port) {
                 display: flex;
                 flex-direction: column;
